@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitAppT</title>
+    <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            40% {
+                transform: translateY(-30px) scale(1.1);
+            }
+            60% {
+                transform: translateY(-15px) scale(1.05);
+            }
+        }
+
+        body {
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        .title {
+            color: black;
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+            margin-top: 20px;
+            font-size: 200px;
+            color-scheme: light dark;
+        }
+        .text-item {
+            margin: 10px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            color: yellow;
+            background-color: rgb(0, 0, 0); /* Highlight color */
+            padding: 5px;
+            border-radius: 5px;
+        }
+        .bounce {
+            animation: bounce 0.7s;
+        }
+        .darkButton {
+            margin: 10px;
+            padding: 10px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .genButton {
+            margin: 10px;
+            padding: 10px;
+            font-size: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+        .dark-mode .text-item {
+            color: rgb(69, 69, 255);
+            background-color: rgb(255, 255, 255);
+        }
+        .dark-mode .darkButton, .dark-mode .genButton {
+            background-color: white;
+            color: black;
+        }
+        .dark-mode .title {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">III</h1>
+    <button id="darkMode" class="darkButton">Light/Dark Mode</button>
+    <button id="generateButton" class="genButton">Generate</button>
+    <div id="textItem1" class="text-item"></div>
+    <div id="textItem2" class="text-item"></div>
+    <div id="textItem3" class="text-item"></div>
+    <div id="textItem4" class="text-item"></div>
+    <script src="selector.js"></script>
+</body>
+</html>
