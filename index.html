@@ -18,7 +18,10 @@
         }
 
         body {
-            background-color: white;
+            background-image: url('bg2.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             margin: 0;
             padding: 0;
             display: flex;
@@ -70,7 +73,10 @@
             cursor: pointer;
         }
         .dark-mode {
-            background-color: black;
+            background-image: url('bg.png');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
             color: white;
         }
         .dark-mode .text-item {
@@ -88,7 +94,7 @@
 </head>
 <body>
     <h1 class="title">III</h1>
-    <button id="darkMode" class="darkButton">Light/Dark Mode</button>
+    <button id="darkMode" class="darkButton">Dark Mode</button>
     <button id="generateButton" class="genButton">Generate</button>
     <div id="textItem1" class="text-item"></div>
     <div id="textItem2" class="text-item"></div>
