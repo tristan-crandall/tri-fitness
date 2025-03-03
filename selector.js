@@ -21,6 +21,10 @@ const points = {
     "Mountain Climbers X 20": 10
 };
 
+let canGoAgain = true;
+
+let lightMode = true;
+
 function getRandomItem(list) {
     return list[Math.floor(Math.random() * list.length)];
 }
@@ -42,6 +46,10 @@ function cycleText(element, list, duration) {
 }
 
 document.getElementById("generateButton").addEventListener("click", async () => {
+    if (!canGoAgain) {
+        return;
+    }
+    canGoAgain = false;
     let item1, item2, item3, totalPoints;
     
     document.getElementById("generateButton").classList.add("bounce");
@@ -84,8 +92,17 @@ document.getElementById("generateButton").addEventListener("click", async () => 
         textItem3.classList.remove("bounce");
         textItem4.classList.remove("bounce");
     }, 700);
+    setTimeout(() => {
+       canGoAgain = true;
+    }, 3000);
 });
 
 document.getElementById("darkMode").addEventListener("click", () => {
+    lightMode = !lightMode;
+    if (lightMode) {
+        document.getElementById("darkMode").innerText = "Dark Mode";
+    } else {
+        document.getElementById("darkMode").innerText = "Light Mode";
+    }
     document.body.classList.toggle("dark-mode");
 });
