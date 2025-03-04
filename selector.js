@@ -1,6 +1,7 @@
 const list1 = ["Deadlifts", "Squats", "Bench Press", "Pull-Ups", "Overhead Press", "Bent Over Rows"];
 const list2 = ["2M Bike Ride", "Parkour for 20m", "Rowing for 20m"];
 const list3 = ["Pushups X 10 (X3)", "Situps X 10 (X3)", "Box Jump X 5 (X5)", "Plank for 1m", "Burpees X 10", "Mountain Climbers X 20"];
+const parkourMoves = ["Precisions X 5 (X5)", "Wall Runs/Tacks X 5 (X5)", "Cats for 1 minute X5", "Kong Vault X5 (X3)", "Dash Vault X 3 (X5)", "Speed Vault X3 (X5)", "Step Vault X10 (X5)", "Line X5"];
 
 const points = {
     "Deadlifts": 35,
@@ -95,6 +96,12 @@ document.getElementById("generateButton").addEventListener("click", async () => 
     setTimeout(() => {
        canGoAgain = true;
     }, 3000);
+
+    if (item2 === "Parkour for 20m") {
+        parkourSection.classList.remove("hidden");
+    } else {
+        parkourSection.classList.add("hidden");
+    }
 });
 
 document.getElementById("darkMode").addEventListener("click", () => {
@@ -105,4 +112,16 @@ document.getElementById("darkMode").addEventListener("click", () => {
         document.getElementById("darkMode").innerText = "Light Mode";
     }
     document.body.classList.toggle("dark-mode");
+});
+
+document.getElementById("parkourButton1").addEventListener("click", () => {
+    document.getElementById("parkourItem1").innerText = getRandomItem(parkourMoves);
+});
+
+document.getElementById("parkourButton2").addEventListener("click", () => {
+    document.getElementById("parkourItem2").innerText = getRandomItem(parkourMoves);
+});
+
+document.getElementById("parkourButton3").addEventListener("click", () => {
+    document.getElementById("parkourItem3").innerText = getRandomItem(parkourMoves);
 });
